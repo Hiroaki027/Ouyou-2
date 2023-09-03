@@ -5,7 +5,9 @@ class BookCommentsController < ApplicationController
     @comment = current_user.book_comments.new(book_comment_params)
     @comment.book_id = @book_comment.id
     @book = Book.find(params[:book_id])
-    @comment.save
+    unless @comment.save
+      render 'error'
+    end
   end
 
   def destroy
