@@ -11,6 +11,9 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/search' %>
+    <% end %>
       <main>
         <p id="notice"><%= notice %></p>
         <%= yield %>
