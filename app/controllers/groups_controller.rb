@@ -13,6 +13,12 @@ class GroupsController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def join  #追記！
+    @group = Group.find(params[:group_id])
+    @group.users << current_user
+    redirect_to  groups_path
+  end
+  
   def new
     @group = Group.new
   end
