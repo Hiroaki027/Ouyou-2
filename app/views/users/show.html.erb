@@ -94,11 +94,11 @@
                     label: '投稿した本の数',
                     data: [
                       <%= @books.created_days_ago(6).count %>,
-                      <%= @books.created_days_ago(5).count %>, 
-                      <%= @books.created_days_ago(4).count %>, 
-                      <%= @books.created_days_ago(3).count %>, 
-                      <%= @books.created_days_ago(2).count %>, 
-                      <%= @books.created_days_ago(1).count %>, 
+                      <%= @books.created_days_ago(5).count %>,
+                      <%= @books.created_days_ago(4).count %>,
+                      <%= @books.created_days_ago(3).count %>,
+                      <%= @books.created_days_ago(2).count %>,
+                      <%= @books.created_days_ago(1).count %>,
                       <%= @books.created_days_ago(0).count %>
                     ],
                     borderColor: "rgba(0,0,255,1)",
@@ -130,12 +130,12 @@
           <%= f.date_field :created_at %>
           <%= f.submit '検索', class: "btn btn-primary" %>
         <% end %>
-    
+
         <div id="search_result">
           <% if @search_book.present? %>
             <%= render 'search', search_book: @search_book %>
           <% end %>
-        </div>   
+        </div>
     </div>
   </div>
 </div>
